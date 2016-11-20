@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "JLPhoto.h"
+#import "PhotoReaderProtocol.h"
 
 @interface JLPhotoManager : NSObject
 + (instancetype)defaultAssetManager;
-- (void)getAspectPhotoWithAsset:(JLPhoto *)imageModel photoWidth:(CGSize)photoSize completion:(void (^)(UIImage *photo,NSDictionary *info))completion;
-- (void)getFullScreenImageWithAsset:(JLPhoto *)imageModel photoWidth:(CGSize)photoSize completion:(void (^)(UIImage *photo,NSDictionary *info))completion;
+- (void)getAspectPhotoWithAsset:(id<PhotoReader>)imageModel photoWidth:(CGSize)photoSize completion:(void (^)(UIImage *photo,NSDictionary *info))completion;
+- (void)getFullScreenImageWithAsset:(id<PhotoReader>)imageModel photoWidth:(CGSize)photoSize completion:(void (^)(UIImage *photo,NSDictionary *info))completion;
 @end

@@ -28,28 +28,28 @@ static JLPhotoManager *manager;
     }
     return manager;
 }
-- (void)getAspectPhotoWithAsset:(JLPhoto *)imageModel photoWidth:(CGSize)photoSize completion:(void (^)(UIImage *photo,NSDictionary *info))completion{
+- (void)getAspectPhotoWithAsset:(id<PhotoReader>)imageModel photoWidth:(CGSize)photoSize completion:(void (^)(UIImage *photo,NSDictionary *info))completion{
     if (imageModel.isNetWorkAsset == NO) {
         if (iOS8Later) {
             //            [self ios8_AsyncLoadAspectThumbilImageWithSize:photoSize asset:imageModel completion:completion];
         }else {//ios8之前
             @try {
-                ALAsset *asset = (ALAsset *)imageModel.asset;
-                UIImage *aspectThumbnail = [UIImage imageWithCGImage:asset.aspectRatioThumbnail];
-                if (completion) {
-                    completion(aspectThumbnail,nil);
-                }
+//                ALAsset *asset = (ALAsset *)imageModel.asset;
+//                UIImage *aspectThumbnail = [UIImage imageWithCGImage:asset.aspectRatioThumbnail];
+//                if (completion) {
+//                    completion(aspectThumbnail,nil);
+//                }
             }
             @catch (NSException *e) {
-                if (completion) {
-                    completion(nil,nil);
-                }
+//                if (completion) {
+//                    completion(nil,nil);
+//                }
             }
         }
     }else {
         @try {
             SDWebImageManager *manager = [SDWebImageManager sharedManager];
-            _webImageOperation = [manager downloadImageWithURL:imageModel.assetUrl
+            _webImageOperation = [manager downloadImageWithURL:[imageModel assetURL]
                                                        options:0
                                                       progress:^(NSInteger receivedSize, NSInteger expectedSize) {
                                                           if (expectedSize > 0) {
@@ -81,28 +81,28 @@ static JLPhotoManager *manager;
     }
 
 }
-- (void)getFullScreenImageWithAsset:(JLPhoto *)imageModel photoWidth:(CGSize)photoSize completion:(void (^)(UIImage *photo,NSDictionary *info))completion{
+- (void)getFullScreenImageWithAsset:(id<PhotoReader>)imageModel photoWidth:(CGSize)photoSize completion:(void (^)(UIImage *photo,NSDictionary *info))completion{
     if (imageModel.isNetWorkAsset == NO) {
         if (iOS8Later) {
             //            [self ios8_AsyncLoadAspectThumbilImageWithSize:photoSize asset:imageModel completion:completion];
         }else {//ios8之前
             @try {
-                ALAsset *asset = (ALAsset *)imageModel.asset;
-                UIImage *aspectThumbnail = [UIImage imageWithCGImage:asset.aspectRatioThumbnail];
-                if (completion) {
-                    completion(aspectThumbnail,nil);
-                }
+//                ALAsset *asset = (ALAsset *)imageModel.asset;
+//                UIImage *aspectThumbnail = [UIImage imageWithCGImage:asset.aspectRatioThumbnail];
+//                if (completion) {
+//                    completion(aspectThumbnail,nil);
+//                }
             }
             @catch (NSException *e) {
-                if (completion) {
-                    completion(nil,nil);
-                }
+//                if (completion) {
+//                    completion(nil,nil);
+//                }
             }
         }
     }else {
         @try {
             SDWebImageManager *manager = [SDWebImageManager sharedManager];
-            _webImageOperation = [manager downloadImageWithURL:imageModel.assetUrl
+            _webImageOperation = [manager downloadImageWithURL:[imageModel assetURL]
                                                        options:0
                                                       progress:^(NSInteger receivedSize, NSInteger expectedSize) {
                                                           if (expectedSize > 0) {

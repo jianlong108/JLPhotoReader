@@ -91,6 +91,7 @@
 		347CA8541DE1C95C00013A63 /* JLTapDetectImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTapDetectImageView.m; sourceTree = "<group>"; };
 		347CA8551DE1C95C00013A63 /* JLTapDetectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTapDetectView.h; sourceTree = "<group>"; };
 		347CA8561DE1C95C00013A63 /* JLTapDetectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTapDetectView.m; sourceTree = "<group>"; };
+		347CA8591DE1E83200013A63 /* PhotoReaderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoReaderProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +188,7 @@
 		347CA8451DE1775F00013A63 /* JLPhotoReader */ = {
 			isa = PBXGroup;
 			children = (
+				347CA8591DE1E83200013A63 /* PhotoReaderProtocol.h */,
 				347CA8461DE17E3000013A63 /* JLPhoto.h */,
 				347CA8471DE17E3000013A63 /* JLPhoto.m */,
 				347CA8491DE1BDBA00013A63 /* JLPhotoManager.h */,
@@ -450,6 +452,7 @@
 				347CA7E91DDF76C200013A63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

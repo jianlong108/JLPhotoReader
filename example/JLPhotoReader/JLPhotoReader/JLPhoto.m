@@ -9,5 +9,7 @@
 #import "JLPhoto.h"
 
 @implementation JLPhoto
-
+- (NSURL *)assetURL{
+    return self.assetUrl;
+}
 @end

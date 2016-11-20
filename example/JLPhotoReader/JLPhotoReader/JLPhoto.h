@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PhotoReaderProtocol.h"
 
-@interface JLPhoto : NSObject
+@interface JLPhoto : NSObject<PhotoReader>
+
 /**图像的url...ios8之后,是唯一标示,已经被包装为URL*/
 @property (nonatomic, strong)NSURL *assetUrl;
-/**是否为网络图片*/
-@property (nonatomic, assign)BOOL isNetWorkAsset;
 
 /**比例缩略图高宽比例 内部不要使用,赋值*/
 @property (nonatomic, assign)CGFloat thumbnailScale;
+
+
 
 /**asset*/
 @property (nonatomic, strong)id asset;
