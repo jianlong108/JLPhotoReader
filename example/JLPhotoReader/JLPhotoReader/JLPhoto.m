@@ -9,6 +9,7 @@
 #import "JLPhoto.h"
 
 @implementation JLPhoto
+@synthesize isNetWorkAsset;
 - (NSURL *)assetURL{
     return self.assetUrl;
 }

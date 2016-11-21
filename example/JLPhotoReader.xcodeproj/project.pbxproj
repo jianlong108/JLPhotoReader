@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3412827F1DE2FA70007BC0AA /* JLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3412827E1DE2FA70007BC0AA /* JLNavigationController.m */; };
 		347CA7D51DDF76C100013A63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 347CA7D41DDF76C100013A63 /* main.m */; };
 		347CA7D81DDF76C200013A63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 347CA7D71DDF76C200013A63 /* AppDelegate.m */; };
 		347CA7E01DDF76C200013A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347CA7DF1DDF76C200013A63 /* Assets.xcassets */; };
@@ -37,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3412827D1DE2FA70007BC0AA /* JLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNavigationController.h; sourceTree = "<group>"; };
+		3412827E1DE2FA70007BC0AA /* JLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNavigationController.m; sourceTree = "<group>"; };
 		347CA7D01DDF76C100013A63 /* JLPhotoReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLPhotoReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		347CA7D41DDF76C100013A63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		347CA7D61DDF76C100013A63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				347CA8171DDF831B00013A63 /* SDWebImage */,
 				347CA7D61DDF76C100013A63 /* AppDelegate.h */,
 				347CA7D71DDF76C200013A63 /* AppDelegate.m */,
+				3412827D1DE2FA70007BC0AA /* JLNavigationController.h */,
+				3412827E1DE2FA70007BC0AA /* JLNavigationController.m */,
 				347CA80B1DDF796600013A63 /* MainViewController.h */,
 				347CA80C1DDF796600013A63 /* MainViewController.m */,
 				347CA8141DDF7FE200013A63 /* GirlsTableViewController.h */,
@@ -302,6 +307,7 @@
 				347CA8361DDF831B00013A63 /* SDImageCache.m in Sources */,
 				347CA83D1DDF831B00013A63 /* UIButton+WebCache.m in Sources */,
 				347CA8351DDF831B00013A63 /* NSData+ImageContentType.m in Sources */,
+				3412827F1DE2FA70007BC0AA /* JLNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

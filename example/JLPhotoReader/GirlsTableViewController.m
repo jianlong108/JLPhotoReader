@@ -17,7 +17,9 @@
 @end
 
 @implementation GirlsTableViewController
-
+- (void)loadView{
+    [super loadView];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"girls"];

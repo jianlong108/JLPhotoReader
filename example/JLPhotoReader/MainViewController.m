@@ -15,6 +15,9 @@
 @property (nonatomic, strong)NSMutableArray *datas;
 
 @property (nonatomic, strong)NSMutableDictionary *datasDic;
+
+/**table*/
+@property (nonatomic, strong)UITableView *table;
 @end
 
 @implementation MainViewController
@@ -26,10 +29,10 @@
     self.datasDic = dic;
     self.datas = [NSMutableArray arrayWithArray:dic.allKeys];
     
-    UITableView *table = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    table.delegate = self;
-    table.dataSource = self;
-    [self.view addSubview:table];
+    _table = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _table.delegate = self;
+    _table.dataSource = self;
+    [self.view addSubview:_table];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,49 +65,29 @@
     girls.data= self.datasDic[self.datas[indexPath.row]];
     [self.navigationController pushViewController:girls animated:YES];
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (scrollView.contentOffset.y <100) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }else if (scrollView.contentOffset.y <200 && scrollView.contentOffset.y >100){
+        [self setNeedsStatusBarAppearanceUpdate];
+    }else{
+        
+    }
+    
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation{
+    return UIStatusBarAnimationFade;
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (BOOL)prefersStatusBarHidden{
+    return NO;
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    if (_table.contentOffset.y <100) {
+        return UIStatusBarStyleLightContent;
+    }else if (_table.contentOffset.y <200 && _table.contentOffset.y >100){
+        return UIStatusBarStyleDefault;
+    }else {
+        return  UIStatusBarStyleDefault;
+    }
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

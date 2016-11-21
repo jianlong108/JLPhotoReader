@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "JLNavigationController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,7 +20,7 @@
     // Override point for customization after application launch.
     UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     window.backgroundColor = [UIColor whiteColor];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[MainViewController alloc]init]];
+    JLNavigationController *nav = [[JLNavigationController alloc]initWithRootViewController:[[MainViewController alloc]init]];
     window.rootViewController = nav;
     [window makeKeyAndVisible];
     self.window =window;
